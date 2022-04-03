@@ -1,15 +1,8 @@
-import React from 'react';
+import React  from "react";
 
-import {
-    Box,
-    VStack,
-    Image,
-    Center,
-    Text,
-    NativeBaseProvider,
-} from 'native-base';
+import { Box , VStack, Image  } from "native-base";
 
-const Example = () => {
+const gettingStart = () => {
     return (
         <Box>
             <VStack space={1} alignItems="center">
@@ -25,12 +18,4 @@ const Example = () => {
     );
 };
 
-export default () => {
-    return (
-        <NativeBaseProvider>
-            <Center flex={1} px="3" bg="orange.400">
-                <Example />
-            </Center>
-        </NativeBaseProvider>
-    );
-};
+export default gettingStart;

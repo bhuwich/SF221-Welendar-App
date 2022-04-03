@@ -6,7 +6,6 @@ import {
 } from "@react-navigation/drawer";
 import {
     NativeBaseProvider,
-    Button,
     Box,
     HamburgerIcon,
     Pressable,
@@ -17,39 +16,60 @@ import {
     HStack,
     Divider,
     Icon,
+    View,
+    Button,
+    extendTheme
 } from "native-base";
-import { LoginScreen } from "src/screenes/login";
+
+const theme = extendTheme({
+    fontConfig: {
+        Prompt: {
+            100: {
+                normal: 'Prompt-Light',
+                italic: 'Prompt-LightItalic',
+            },
+            200: {
+                normal: 'Prompt-Light',
+                italic: 'Prompt-LightItalic',
+            },
+            300: {
+                normal: 'Prompt-Light',
+                italic: 'Prompt-LightItalic',
+            },
+            400: {
+                normal: 'Prompt-Regular',
+                italic: 'Prompt-Italic',
+            },
+            500: {
+                normal: 'Prompt-Medium',
+            },
+            600: {
+                normal: 'Prompt-Medium',
+                italic: 'Prompt-MediumItalic',
+            },
+        },
+    },
+    // Make sure values below matches any of the keys in `fontConfig`
+    fonts: {
+        heading: 'Prompt',
+        body: 'Prompt',
+        mono: 'Prompt',
+    },
+});
+
 const Drawer = createDrawerNavigator();
 
-function Component(props) {
-    return (
-        <Center>
-            <Text mt="12" fontSize="18">
-                This is {props.route.name} page.
-            </Text>
 
-        </Center>
+function Feed({ navigation }) {
+    return (
+        //<Register/>
+        <View>
+            <Box bg="white" h={"100%"}>
+
+            </Box>
+        </View>
     );
 }
-
-const getIcon = (screenName) => {
-    switch (screenName) {
-        case "Inbox":
-            return "email";
-        case "Outbox":
-            return "send";
-        case "Favorites":
-            return "heart";
-        case "Archive":
-            return "archive";
-        case "Trash":
-            return "trash-can";
-        case "Spam":
-            return "alert-circle";
-        default:
-            return undefined;
-    }
-};
 
 function CustomDrawerContent(props) {
     return (
@@ -100,46 +120,11 @@ function CustomDrawerContent(props) {
                         ))}
                     </VStack>
                     <VStack space="5">
-                        <Text fontWeight="500" fontSize="14" px="5" color="gray.500">
-                            Labels
-                        </Text>
                         <VStack space="3">
-                            <Pressable px="5" py="3">
-                                <HStack space="7" alignItems="center">
-                                    <Icon
-                                        color="gray.500"
-                                        size="5"
-
-                                    />
-                                    <Text color="gray.700" fontWeight="500">
-                                        Family
-                                    </Text>
-                                </HStack>
-                            </Pressable>
-                            <Pressable px="5" py="2">
-                                <HStack space="7" alignItems="center">
-                                    <Icon
-                                        color="gray.500"
-                                        size="5"
-
-                                    />
-                                    <Text color="gray.700" fontWeight="500">
-                                        Friends
-                                    </Text>
-                                </HStack>
-                            </Pressable>
-                            <Pressable px="5" py="3">
-                                <HStack space="7" alignItems="center">
-                                    <Icon
-                                        color="gray.500"
-                                        size="5"
-
-                                    />
-                                    <Text fontWeight="500" color="gray.700">
-                                        Work
-                                    </Text>
-                                </HStack>
-                            </Pressable>
+                            <Button
+                                size="md"
+                                variant="ghost"
+                                colorScheme="secondary">Logout</Button>
                         </VStack>
                     </VStack>
                 </VStack>
@@ -151,22 +136,18 @@ function MyDrawer() {
     return (
         <Box safeArea flex={1}>
             <Drawer.Navigator
-                drawerContent={(props) => <CustomDrawerContent {...props} />}
-            >
-                <Drawer.Screen name="Inbox" component={Component} />
-                <Drawer.Screen name="Outbox" component={Component} />
-                <Drawer.Screen name="Favorites" component={Component} />
-                <Drawer.Screen name="Archive" component={Component} />
-                <Drawer.Screen name="Trash" component={Component} />
-                <Drawer.Screen name="Spam" component={Component} />
+                drawerContent={(props) => <CustomDrawerContent {...props} />}>
+                <Drawer.Screen name="calendar" component={Feed} />
+
             </Drawer.Navigator>
         </Box>
     );
 }
-export default function Example() {
+
+export default () => {
     return (
-        <NavigationContainer>
-            <NativeBaseProvider>
+        <NavigationContainer >
+            <NativeBaseProvider >
                 <MyDrawer />
             </NativeBaseProvider>
         </NavigationContainer>
