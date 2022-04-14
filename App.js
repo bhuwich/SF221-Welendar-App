@@ -1,22 +1,19 @@
 import React from 'react';
-import {Box, Center, NativeBaseProvider} from 'native-base';
+import {NativeBaseProvider,} from 'native-base';
+
+import {NavigationContainer} from "@react-navigation/native";
+import AppStack from "./src/navigation/AppStack";
+import Splash from "./src/screens/Splash";
+import AlertConfirm from "./src/components/molecules/AlertConfirm";
+
 
 export default () => {
   return (
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <Box
-          alignSelf="center"
-          bg="primary.500"
-              _text={{
-                  fontSize: 'md',
-                  fontWeight: 'medium',
-                  color: 'warmGray.50',
-                  letterSpacing: 'lg',
-              }}>
-              This is a Box
-          </Box>
-      </Center>
-    </NativeBaseProvider>
+      <NavigationContainer>
+        <NativeBaseProvider>
+            <AppStack/>
+        </NativeBaseProvider>
+      </NavigationContainer>
   );
-};
+}
+
