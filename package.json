@@ -38,6 +38,7 @@
     "@babel/core": "7.17.8",
     "@babel/runtime": "7.17.8",
     "@react-native-community/eslint-config": "2.0.0",
+    "@types/react-native-calendars": "^1.1264.3",
     "babel-jest": "26.6.3",
     "eslint": "7.14.0",
     "jest": "26.6.3",
