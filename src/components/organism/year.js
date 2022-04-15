@@ -34,7 +34,7 @@ class Homepage extends React.Component {
 
                     backgroundColor: '#FFFFFF',
                     width:'100%',
-                    height:400
+                    height:'100%'
 
                 }}>
                     <View >
