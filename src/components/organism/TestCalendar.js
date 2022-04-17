@@ -36,47 +36,33 @@ const Schedule: React.FC = () => {
         }, 1000);
     };
 
-
+    const renderItem = (item) => {
+        return (
+            <TouchableOpacity style={{marginRight: 10, marginTop: 17}}>
+                <Card>
+                    <Card.Content>
+                        <View
+                            style={{
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                            }}>
+                            <Text>{item.name}</Text>
+                            <Avatar.Text label="J" />
+                        </View>
+                    </Card.Content>
+                </Card>
+            </TouchableOpacity>
+        );
+    };
 
     return (
         <View style={{flex: 1}}>
             <Agenda
-                style={{marginLeft:5 ,marginRight:5}}
-                theme={{
-                    'stylesheet.calendar.header': {
-                        header: {
-                            justifyContent: 'flex-start',
-                            marginTop: 6,
-                            marginBottom: 10,
-                            marginLeft: 15
-                        },
-                        monthText: {
-                            fontSize: 22,
-                            fontWeight: 'bold',
-                            color:'#2F2E41'
-                        },
-                        dayHeader: {
-                            marginTop: 10,
-                            fontWeight: 'bold',
-                            color: '#2F2E41'
-                        }
-                    },
-                    todayBackgroundColor: '#FF975C',
-                    todayTextColor:'white',
-                    textDayFontWeight: 'bold',
-                    dayTextColor: '#2F2E41'
-                }}
-                hideArrows
-                enableSwipeMonths
                 items={items}
                 loadItemsForMonth={loadItems}
-                selected={'2022-04-14'}
-
-                // Max amount of months allowed to scroll to the future. Default = 50
-                futureScrollRange={100}
-                markedDates={{}}
-
-
+                selected={'2022-04-15'}
+                renderItem={renderItem}
             />
         </View>
     );

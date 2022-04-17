@@ -10,7 +10,7 @@ const EventTextFiled = () => {
         <Box style = {styles.Box}>
             <Text style = {styles.header}>Event name</Text>
             <Input value = {value} onChangeText={handleChange} placeholder ='title'
-            style = {styles.EventInput}/>
+                   style = {styles.EventInput}/>
         </Box>
     )
 }
@@ -22,8 +22,8 @@ const NoteTextFiled = () => {
         <Box style = {styles.Box}>
             <Text style = {styles.header}>Note</Text>
             <TextArea value = {value} onChangeText={handleChange}
-            placeholder="writing something to remind" 
-            style = {styles.NoteInput}/>
+                      placeholder="writing something to remind"
+                      style = {styles.NoteInput}/>
         </Box>
     )
 }
