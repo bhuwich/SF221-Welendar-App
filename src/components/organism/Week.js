@@ -57,13 +57,8 @@ const Schedule: React.FC = () => {
             setItems(newItems);
         }, 1000);
     };
-
-
-
     return (
-
         <View style={{flex: 1}}>
-
             <Agenda
                 style={{marginLeft:5 ,marginRight:5}}
                 theme={{
@@ -116,13 +111,9 @@ const Schedule: React.FC = () => {
                 showClosingKnob={true}
                 selected={'2022-04-14'}
                 hideExtraDays={false}
-
-
                 // Max amount of months allowed to scroll to the future. Default = 50
                 futureScrollRange={100}
                 markedDates={{}}
-
-
             />
         </View>
     );
