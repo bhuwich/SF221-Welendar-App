@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '11.0'
 
-target 'SF221' do
+target 'Welendar' do
   config = use_native_modules!
 
   use_react_native!(
@@ -14,7 +14,7 @@ target 'SF221' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-  target 'SF221Tests' do
+  target 'WelendarTests' do
     inherit! :complete
     # Pods for testing
   end

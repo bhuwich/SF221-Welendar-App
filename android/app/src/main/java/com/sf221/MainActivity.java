@@ -11,7 +11,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "SF221";
+    return "Welendar";
   }
   @Override
   protected void onCreate(Bundle savedInstanceState) {

@@ -87,7 +87,7 @@ const AppWelcome = ({navigation}) => {
                     />
                 </Box>
             </Box>
-            <Box style={styles.buttonContainer} mt={10}>
+            <Box style={styles.buttonContainer} pt={5}>
                 <Button w={150} colorScheme={'warning'} bgColor='#FF975C' rounded={100} onPress={() => navigation.navigate('Main')} shadow={3} > GetStarted </Button>
             </Box>
         </Box>
