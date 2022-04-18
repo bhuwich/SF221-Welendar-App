@@ -3,6 +3,7 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import {LocaleConfig} from 'react-native-calendars';
+import moment from "moment";
 LocaleConfig.locales['fr'] = {
     monthNames: [
         'January',
@@ -114,7 +115,7 @@ const Schedule: React.FC = () => {
                 loadItemsForMonth={loadItems}
                 hideKnob={false}
                 showClosingKnob={true}
-                selected={'2022-04-14'}
+                selected={moment(new Date()).format("YYYY-MM-DD")}
                 hideExtraDays={false}
 
 
