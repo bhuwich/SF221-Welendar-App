@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.3",
     "@react-native-community/datetimepicker": "^6.1.1",
     "@react-native-community/masked-view": "*",
     "@react-navigation/bottom-tabs": "6.0.4",
