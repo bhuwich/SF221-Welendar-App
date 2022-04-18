@@ -1,0 +1,83 @@
+{
+    "Week": {
+      "Today": "Today",
+      "Event" : "Event"
+    },
+    "Moth": {
+      "Event" : "Event"
+    },
+    "AddingPlan": {
+      "Event name": "Event name",
+      "Title" : "Title",
+      "Date" : "Date",
+      "Time" : "Time",
+      "Location" : "Location",
+      "Online" : "Online",
+      "Add location from Google map": "+ Add location from Google map",
+      "Note" : "Note",
+      "writing somethings to remind..." : "writing somethings to remind...",
+      "Save" : "Save"
+    },
+    "Comfirm Add Plan": {
+      "Comfirm you change ?": "Comfirm you change ?",
+      "Your previous plan will be deleted. Confirm change?" : "Your previous plan will be deleted. Confirm change?",
+      "Cancel" : "Cancel",
+      "Comfirm" : "Comfirm"
+    },
+    "Detail Event": {
+      "Detail Event" : "Detail Event",
+      "Edit" : "Edit",
+      "Delete" : "Delete"
+    },
+    "Edit event" : {
+      "Event name" : "Event name",
+      "Date" : "Dateà¸µ",
+      "Time" : "Time",
+      "Note" : "Note",
+      "Cancel" : "Cancel",
+      "Save" : "Save"
+    },
+    "Navbar": {
+      "Week": "Week",
+      "Month": "Month",
+      "Year" : "Year",
+      "Activities" : "Activities",
+      "English" : "English",
+      "Thai": "Thai",
+      "Light": "Light",
+      "Dark": "Dark"
+  
+    },
+    "Day": {
+      "Sunday": "Sunday",
+      "Su": "Su",
+      "Monday": "Monday",
+      "Mo": "Mo",
+      "Tuesday": "Tuesday",
+      "Tu": "Tu",
+      "Wednesday": "Wednesday",
+      "We": "We",
+      "Thursday": "Thursday",
+      "Th":"Th",
+      "Friday": "Friday",
+      "Fr": "Fr",
+      "Saturday":"Saturday",
+      "Sa": "Sa"
+    },
+    "Month": {
+      "January": "January",
+      "February":"February",
+      "March": "March",
+      "April":"April",
+      "May": "May",
+      "June":"June",
+      "July": "July",
+      "August":"August",
+      "September":"September",
+      "October":"October",
+      "November":"November",
+      "December":"December"
+    }
+  
+  
+  }

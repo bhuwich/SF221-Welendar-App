@@ -61,24 +61,17 @@ class Homepage extends React.Component {
                                         color: '#2F2E41'
                                     },
                                 },
-
-
-
-
                                 todayBackgroundColor: '#FF975C',
                                 todayTextColor:'white',
                                 textDayFontWeight: 'bold',
                                 dayTextColor: '#2F2E41',
-
                             }}
                             hideArrows
                             enableSwipeMonths={true}
                             horizontal={true}
                             hideExtraDays={false}
                             showSixWeeks={true}
-
                         >
-
                         </Calendar>
                     </View>
 

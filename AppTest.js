@@ -4,56 +4,62 @@ import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function App() {
-    const [value, setValue] = useState('value');
-    const { getItem, setItem } = useAsyncStorage('@storage_key');
+  
+  const [value, setValue] = useState('value');
+  const { getItem, setItem } = useAsyncStorage('@storage_key');
 
-    const readItemFromStorage = async () => {
-        const item = await getItem();
-        setValue(item);
+  const readItemFromStorage = async () => {
+    const item = await getItem();
+    setValue(item);
+  };
+
+  const writeItemToStorage = async newValue => {
+    
+    const movieData = {
+      UrlImage : "Thachot",
+      movie_desc : "Wongmetin"
     };
+    await setItem(JSON.stringify(movieData));
 
-    const writeItemToStorage = async newValue => {
-        await setItem(newValue);
-        setValue(newValue);
-    };
+    setValue(JSON.stringify(movieData));
+  };
 
-    const getAllKeys = async () => {
-        let keys = []
-        try {
-            keys = await AsyncStorage.getAllKeys()
-        } catch(e) {
-            // read key error
-        }
-
-        console.log(keys)
-        // example console.log result:
-        // ['@MyApp_user', '@MyApp_key']
+  const getAllKeys = async () => {
+    let keys = []
+    try {
+      keys = await AsyncStorage.getAllKeys()
+    } catch(e) {
+      // read key error
     }
-    useEffect(() => {
-        readItemFromStorage();
-    }, []);
 
-    return (
-        <View style={{ margin: 40 }}>
-            <Text>Current value: {value}</Text>
-            <TouchableOpacity
-                onPress={() =>
-                    writeItemToStorage(
-                        Math.random()
-                            .toString(36)
-                            .substr(2, 5)
-                    )
-                }
-            >
-                <Text>Update value</Text>
-            </TouchableOpacity>
+    console.log(value)
+  }
 
-            <TouchableOpacity
-                onPress={() => getAllKeys()
-                }
-            >
-                <Text>Get All Key</Text>
-            </TouchableOpacity>
-        </View>
-    );
+  useEffect(() => {
+    readItemFromStorage();
+  }, []);
+
+  return (
+    <View style={{ margin: 40 }}>
+      <Text>Current value: {value}</Text>
+      <TouchableOpacity
+        onPress={() =>
+          writeItemToStorage(
+            Math.random()
+              .toString(36)
+              .substr(2, 5)
+          )
+        }
+      >
+        <Text>Update value</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => getAllKeys()
+        }
+      >
+        <Text>Get All Key</Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
