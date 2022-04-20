@@ -1,29 +1,65 @@
 import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import AppWelcome from "./src/screens/GetStarted";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
-import { Center ,Box ,Text,NativeBaseProvider,Button} from "native-base";
-const Stack = createStackNavigator();
-const App = () => {
 
-  return(
-  <NativeBaseProvider>
-    <Center flex={1} px="3">
-      <Box alignItems="center">
-        <Text>
-          Welcome a new user
-        </Text>
-        {token ? <Button
-          onPress={() => {{Clear}}}> logout </Button> : <Button > login </Button>
+export default function App() {
+
+  const [value, setValue] = useState('value');
+  const { getItem, setItem } = useAsyncStorage('@storage_key');
+
+  const readItemFromStorage = async () => {
+    const item = await getItem();
+    setValue(item);
+  };
+
+  const writeItemToStorage = async newValue => {
+
+    const movieData = {
+      UrlImage : "Thachot",
+      movie_desc : "Wongmetin"
+    };
+    await setItem(JSON.stringify(movieData));
+
+    setValue(JSON.stringify(movieData));
+  };
+
+  const getAllKeys = async () => {
+    let keys = []
+    try {
+      keys = await AsyncStorage.getAllKeys()
+    } catch(e) {
+      // read key error
+    }
+
+    console.log(value)
+  }
+
+  useEffect(() => {
+    readItemFromStorage();
+  }, []);
+
+  return (
+    <View style={{ margin: 40 }}>
+      <Text>Current value: {value}</Text>
+      <TouchableOpacity
+        onPress={() =>
+          writeItemToStorage(
+            Math.random()
+              .toString(36)
+              .substr(2, 5)
+          )
         }
-      </Box>;
-    </Center>
-</NativeBaseProvider>
+      >
+        <Text>Update value</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => getAllKeys()
+        }
+      >
+        <Text>Get All Key</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
-
-
-
-export default App;
