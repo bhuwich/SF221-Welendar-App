@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState } from "react";
 import {createDrawerNavigator} from "@react-navigation/drawer";
 import {createStackNavigator} from "@react-navigation/stack";
-
+import { AsyncStorage } from "react-native";
 import CustomDrawer from "./CustomDrawer";
 import AppWelcome from "../screens/GetStarted";
 import YearCalendar from "../screens/YearCalendar";
@@ -11,6 +11,7 @@ import Event from "../screens/Event";
 import AddingPlan from "../screens/AddingPlan";
 import EventDetail from "../screens/EventDetail";
 import EditEvent from "../screens/EditEvent";
+import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 
 
 const Drawer = createDrawerNavigator();
@@ -47,9 +48,9 @@ const EventStack  = () => {
     );
 }
 
-const RootStack  = () => {
+const RootStack = (props) => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={props.token !== false ? 'Welcome' : 'Main'}>
             <Stack.Screen name='Welcome' component={AppWelcome} />
             <Stack.Screen name='Main' component={RootDrawerNavigator} />
         </Stack.Navigator>

@@ -1,7 +1,8 @@
 import {Animated, FlatList, Image, StyleSheet, useWindowDimensions} from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import {Box, Button, Text} from "native-base";
 import {ExpandingDot} from "react-native-animated-pagination-dots";
+import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 
 const introData = [
     {
@@ -50,6 +51,12 @@ const AppWelcome = ({navigation}) => {
         [width]
     );
     const keyExtractor = React.useCallback((item) => item.key, []);
+    const [value, setValue] = useState('');
+    const { getItem, setItem } = useAsyncStorage('@storage_key');
+    const GettingStarted = async () =>{
+      await setItem(JSON.stringify(false));
+      navigation.navigate('Main');
+    }
     return (
         <Box style={[styles.container]}>
             <FlatList
@@ -88,7 +95,8 @@ const AppWelcome = ({navigation}) => {
                 </Box>
             </Box>
             <Box style={styles.buttonContainer} pt={5}>
-                <Button w={150} colorScheme={'warning'} bgColor='#FF975C' rounded={100} onPress={() => navigation.navigate('Main')} shadow={3} > GetStarted </Button>
+                <Button w={150} colorScheme={'warning'} bgColor='#FF975C' rounded={100}
+                        onPress={() =>GettingStarted() } shadow={3} > GetStarted </Button>
             </Box>
         </Box>
     );
