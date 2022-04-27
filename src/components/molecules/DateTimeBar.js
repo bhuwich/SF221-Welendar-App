@@ -3,7 +3,7 @@ import { Platform } from 'react-native'
 import DateTimePicker from '@react-native-community/datetimepicker'
 import { Button, Box, Input, FormControl, Text, Pressable } from 'native-base'
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import styles from "../style/styleDateTimebar"
+import styles from "../style/styDateTimebar"
 import moment from "moment";
 
 const DateTimebar = () => {
@@ -19,7 +19,7 @@ const DateTimebar = () => {
         setDate(currentDate);
 
         let tempDate = new Date(currentDate);
-        let fDate = tempDate.getDate() + "/" + tempDate.getMonth() + "/" + tempDate.getFullYear()
+        let fDate = moment(tempDate).format('ll');
         let fTime = moment(tempDate).format('LT');
         setTextDate(fDate);
         setTextTime(fTime);
@@ -31,11 +31,11 @@ const DateTimebar = () => {
     }
 
     return(
-        <Box>
-            <Text style = {styles.header}>Date</Text>
+        <>
             <FormControl isDisabled>
-                <Box style = {styles.box}>
-                    <Input defaultValue={textDate} height = {10} width = {"85%"} />
+                <FormControl.Label>Date</FormControl.Label>
+                <Box style = {styles.dateBox}>
+                    <Input defaultValue={textDate} height = {10} width = {"87%"} />
                     <Button style = {styles.button} onPress={() => showMode("date")}>
                         <EvilIcons name = "calendar" size={20} color={"#FFFFFF"} />
                     </Button>
@@ -43,7 +43,7 @@ const DateTimebar = () => {
             </FormControl>
 
             <FormControl isDisabled style = {styles.timeBox}>
-                <Text style = {styles.header}>Time</Text>
+                <FormControl.Label>Time</FormControl.Label>
                 <Pressable onPress={() => showMode("time")}>
                     <Input defaultValue={textTime} height = {10}/>
                 </Pressable>
@@ -56,7 +56,7 @@ const DateTimebar = () => {
                     display='default'
                     onChange={onChange}
                 />)}
-        </Box>
+        </>
     )
 }
 

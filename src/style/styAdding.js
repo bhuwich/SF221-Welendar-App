@@ -1,12 +1,31 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create ({
-    box : {
-        flexDirection : "row",
+    page : {
         justifyContent : "center",
-        alignItems : "center",
+        alignItems : "center"
+    },
+
+    header : { 
+        fontSize : 28,
+        fontWeight : "bold",
+        paddingTop : "10%",
+        marginBottom : "10%"
+        
+    },
+
+    element : { 
+        marginBottom : 10
+    },
+
+    dateBox : {
+        flexDirection : "row",
         marginBottom : 10
 
+    },
+
+    timeBox : {
+        marginBottom : 10
     },
 
     button : {
@@ -18,16 +37,4 @@ export default StyleSheet.create ({
         width : 45,
         height : 40
     },
-
-    header : {
-        marginBottom : 10
-    },
-
-    timeBox : {
-        marginBottom : 10
-    }
-
-
-
-
 })

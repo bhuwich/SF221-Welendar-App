@@ -21,6 +21,7 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "6.0.5",
     "@react-navigation/stack": "6.0.6",
+    "@reduxjs/toolkit": "^1.8.1",
     "@rneui/base": "github:react-native-elements/react-native-elements#base",
     "@rneui/themed": "github:react-native-elements/react-native-elements#themed",
     "native-base": "^3.3.7",
@@ -37,7 +38,10 @@
     "react-native-screens": "~3.8.0",
     "react-native-svg": "^12.1.0",
     "react-native-tab-view": "^3.0.0",
-    "react-native-vector-icons": "^9.1.0"
+    "react-native-vector-icons": "^9.1.0",
+    "react-redux": "^8.0.1",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
     "@babel/core": "7.17.8",
