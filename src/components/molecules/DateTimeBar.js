@@ -23,7 +23,7 @@ const DateTimebar = () => {
         setDate(currentDate);
 
         let tempDate = new Date(currentDate);
-        let fDate = tempDate.getDate() + "/" + tempDate.getMonth() + "/" + tempDate.getFullYear()
+        let fDate = tempDate.getDate() + "/" + (parseInt(tempDate.getMonth())+1) + "/" + tempDate.getFullYear()
         let fTime = moment(tempDate).format('LT');
         setTextDate(fDate);
         setTextTime(fTime);
