@@ -3,7 +3,8 @@ import { Platform } from 'react-native'
 import DateTimePicker from '@react-native-community/datetimepicker'
 import { Button, Box, Input, FormControl, Text, Pressable } from 'native-base'
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import styles from "../style/styleDateTimebar"
+import styles from "../style/styDateTimebar";
+import style from "../style/styleTextField"
 import moment from "moment";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
@@ -46,9 +47,9 @@ const DateTimebar = () => {
 
     return(
       <Box>
-          <Text style = {styles.header}>Date</Text>
+          <Text style = {style.header}>Date</Text>
           <FormControl isDisabled>
-              <Box style = {styles.box}>
+              <Box style = {style.Box}>
                   <Input defaultValue={textDate} height = {10} width = {"85%"} />
                   <Button style = {styles.button} onPress={() => showMode("date")}>
                       <EvilIcons name = "calendar" size={20} color={"#FFFFFF"} />
@@ -57,7 +58,7 @@ const DateTimebar = () => {
           </FormControl>
 
           <FormControl isDisabled style = {styles.timeBox}>
-              <Text style = {styles.header}>Time</Text>
+              <Text style = {style.header}>Time</Text>
               <Pressable onPress={() => showMode("time")}>
                   <Input defaultValue={textTime} height = {10}/>
               </Pressable>
