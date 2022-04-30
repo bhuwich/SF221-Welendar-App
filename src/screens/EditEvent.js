@@ -6,6 +6,8 @@ import {
     NoteTextFiled
 } from '../components/atoms/TextField';
 import DateTimebar from '../components/molecules/DateTimeBar';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../style/styleEvent';
 
 const EditEvent = ({navigation}) => {
@@ -30,7 +32,12 @@ const EditEvent = ({navigation}) => {
             </Box>
             <NoteTextFiled/>
             <Box >
-                <Button  onPress={() => navigation.navigate('RootDrawer')} colorScheme={'warning'} mt={5} mb={5}>
+                <Button  onPress={async () =>
+                {
+                    await AsyncStorage.setItem('@storage_key','date');
+                    navigation.navigate('RootDrawer')
+                }
+                } colorScheme={'warning'} mt={5} mb={5}>
                     Save
                 </Button>
 

@@ -55,7 +55,7 @@ export default function App() {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => getAllKeys()
+        onPress={() => clear()
         }
       >
         <Text>Get All Key</Text>

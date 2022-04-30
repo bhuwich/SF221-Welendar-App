@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import {
     Pressable,
     Text,
@@ -6,8 +6,27 @@ import {
     HStack,
     Spacer,
 } from 'native-base';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function EventField() {
+  const [list,setList] = useState();
+  const [isFecth,setIsFecth] = useState(false);
+  useEffect(()=>{
+    fectData();
+  }, [list]);
+
+  const fectData= async () =>{
+    if(!isFecth){
+      const dataNote = await AsyncStorage.getItem('fliterData');
+      setList(JSON.parse(dataNote));
+      console.log(list);
+      setIsFecth(true);
+    }
+
+
+    // await setToken(JSON.parse(res));
+
+  }
     return (
         <Box alignItems="center" mt="5">
             <Pressable>
@@ -24,16 +43,17 @@ export default function EventField() {
                                     mt="0"
                                     fontWeight="medium"
                                     fontSize="sm">
-                                    Marketing License
+
                                 </Text>
                                 <Spacer />
                                 <Text fontSize="xs" color="coolGray.800">
-                                    10:00 AM - 11:30 AM
+
+
                                 </Text>
                             </HStack>
                             <Text fontSize="xs" mt="1" /*white*/ >
-                                Bengaluru (also called Bangalore) is the center of India's
                             </Text>
+
                         </Box>
                     );
                 }}

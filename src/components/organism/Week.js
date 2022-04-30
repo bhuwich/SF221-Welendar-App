@@ -1,10 +1,16 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from "react";
 import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import {LocaleConfig} from 'react-native-calendars';
 import moment from "moment";
-LocaleConfig.locales['fr'] = {
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+
+
+
+
+LocaleConfig.locales['th'] = {
     monthNames: [
         'January',
         'February',
@@ -24,7 +30,7 @@ LocaleConfig.locales['fr'] = {
     dayNamesShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
     today: "Today"
 };
-LocaleConfig.defaultLocale = 'fr';
+LocaleConfig.defaultLocale = 'th';
 
 
 const timeToString = (time) => {
@@ -34,8 +40,32 @@ const timeToString = (time) => {
 
 const Schedule: React.FC = () => {
     const [items, setItems] = useState({});
+    const [dataList, setDataList] = useState();
+    const [isFecth,setIsFecth] = useState(false);
+
+
+    useEffect(()=>{
+        fectData();
+    }, [dataList]);
+
+    const fectData= async () =>{
+        if(!isFecth){
+            const dataNote = await AsyncStorage.getItem('dataArray');
+            setDataList(JSON.parse(dataNote));
+            console.log(dataList);
+            setIsFecth(true);
+        }
+
+
+        // await setToken(JSON.parse(res));
+
+    }
+
 
     const loadItems = (day) => {
+        console.log(typeof items);
+        console.log(typeof dataList);
+
         setTimeout(() => {
             for (let i = -15; i < 85; i++) {
                 const time = day.timestamp + i * 24 * 60 * 60 * 1000;
@@ -108,6 +138,8 @@ const Schedule: React.FC = () => {
                 enableSwipeMonths
                 items={items}
                 loadItemsForMonth={loadItems}
+
+
                 hideKnob={false}
                 showClosingKnob={true}
                 selected={moment(new Date()).format("YYYY-MM-DD")}

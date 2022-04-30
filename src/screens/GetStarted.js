@@ -9,7 +9,7 @@ const introData = [
         key: '1',
         title: 'Welcome',
         description:
-            'Hi , I\'m welendar.',
+          'Hello everyone. You just enter the calendar application that will now be your main calendar!' ,
         image:
             'https://imgz.io/images/2022/04/17/undraw_Mobile_application_re_13u3.png',
 
@@ -18,7 +18,7 @@ const introData = [
         key: '2',
         title: 'About Me',
         description:
-            "The most modern calendar in this era.",
+        "Hi , I'm welendar.The most modern calendar in this era. I will help you remember all your activities!",
         image:
             'https://imgz.io/images/2022/04/17/undraw_Online_calendar_re_wk3t.png',
 
@@ -27,7 +27,7 @@ const introData = [
         key: '3',
         title: 'Let\'s Go!! 🎈',
         description:
-            'I will help you remember all your activities!',
+        "Are you ready? to see what I'm look like I will make sure that you fall for me 🙂",
         image:
             'https://imgz.io/images/2022/04/17/undraw_Choose_re_7d5a.png',
 

@@ -41,7 +41,7 @@ const CreateEvent  = () => {
 
 const EventStack  = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator  initialRouteName={false ? 'Main' :  'Welcome'} screenOptions={{ headerShown: false }}>
             <Stack.Screen name='CreateEvent' component={EventDetail} />
             <Stack.Screen name='EditEvent' component={EditEvent} />
         </Stack.Navigator>

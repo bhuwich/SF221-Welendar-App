@@ -21,14 +21,15 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "6.0.5",
     "@react-navigation/stack": "6.0.6",
-    "@reduxjs/toolkit": "^1.8.1",
     "@rneui/base": "github:react-native-elements/react-native-elements#base",
     "@rneui/themed": "github:react-native-elements/react-native-elements#themed",
+    "date-fns": "^2.28.0",
     "native-base": "^3.3.7",
     "react": "17.0.2",
     "react-native": "^0.67.3",
     "react-native-animated-pagination-dots": "^0.1.72",
     "react-native-calendars": "^1.1280.0",
+    "react-native-fs": "^2.19.0",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-modal-datetime-picker": "^13.1.2",
     "react-native-pager-view": "5.4.6",
@@ -39,9 +40,7 @@
     "react-native-svg": "^12.1.0",
     "react-native-tab-view": "^3.0.0",
     "react-native-vector-icons": "^9.1.0",
-    "react-redux": "^8.0.1",
-    "redux": "^4.2.0",
-    "redux-thunk": "^2.4.1"
+    "write-json-file": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.17.8",

@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import {Box, HStack, IconButton, ScrollView,Fab} from "native-base";
 import {StyleSheet} from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import AntDesign  from "react-native-vector-icons/AntDesign"
 
-
-import Month from "../components/organism/Month";
 import EventList from "../components/organism/EventList";
+import Month from "../components/organism/Month";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 const MonthCalendar = ({navigation}) => {
+  const [dataList,setDataList] = useState([]);
+  const [isFecth,setIsFecth] = useState(false);
+
+
+
+  useEffect(()=>{
+    fectData();
+  }, [dataList]);
+
+  const fectData= async () => {
+    if (!isFecth) {
+      const dataNote = await AsyncStorage.getItem('fliterData');
+      setDataList(JSON.parse(dataNote));
+      console.log(dataList);
+      setIsFecth(true);
+    }
+  }
+
     return (
         <Box>
             <ScrollView
@@ -21,7 +39,8 @@ const MonthCalendar = ({navigation}) => {
                                     onPress={() => navigation.openDrawer()}/>
                     </HStack>
                     <Month/>
-                    <EventList/>
+                  <EventList/>
+
                 </Box>
             </ScrollView>
             <Fab renderInPortal={false} shadow={2} bottom={10}

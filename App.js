@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { AsyncStorage, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { Box, Image,NativeBaseProvider } from 'native-base';
 import {NavigationContainer} from "@react-navigation/native";
 import AppStack from "./src/navigation/AppStack";
-import { LogBox } from 'react-native';
+import {LogBox } from 'react-native';
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
-import { Provider } from "react-redux";
-import { Store } from "./src/store/store"
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 LogBox.ignoreLogs(['Reanimated 2']);
 
 const ImageLogo = './src/assets/Images/mainlogo.png';
@@ -36,17 +34,14 @@ const App = () => {
     })
 
     return (
-        <Provider store={Store}>
-            <NavigationContainer>
-                <NativeBaseProvider>
+        <NavigationContainer>
+            <NativeBaseProvider>
                     {!alignsecond ? <Box style={[styles.container, { justifyContent: align }]} background="#FF975C">
-                    <Image source={require(ImageLogo)} alt="Main Logo Welendar"
+                <Image source={require(ImageLogo)} alt="Main Logo Welendar"
                                    style={{ width:170, height: 170}}/>
-                    </Box>: <AppStack token={token}/>}
-                </NativeBaseProvider>
-            </NavigationContainer>
-        </Provider>
-            
+                </Box>: <AppStack token={token}/>}
+            </NativeBaseProvider>
+        </NavigationContainer>
     );
 };
 
