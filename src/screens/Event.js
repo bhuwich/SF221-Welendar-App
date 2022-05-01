@@ -24,7 +24,7 @@ const EventScreen= ({navigation})=> {
     const dateNow = moment(new Date()).format('ll');
     const [dataList,setDataList] = useState([]);
     const [isFecth,setIsFecth] = useState(false);
-    const now = moment(new Date()).format('DD/M/YYYY');
+    const now = moment(new Date()).format('D/M/YYYY');
     const [list,setList] = useState([]);
 
 
@@ -91,32 +91,32 @@ const EventScreen= ({navigation})=> {
 
 
     return (
-      <ScrollView>
-          <Center style={styles.container}>
+        <ScrollView>
+            <Center style={styles.container}>
 
 
-              <Box py={5}>
-                  <Box style={styles.HeadingText}>
-                      <HStack>
-                          <IconButton icon={<Icon name="md-menu-sharp" size={30}/>}
-                                      onPress={() => navigation.openDrawer()}/>
-                          <Heading size="lg" ml={60} mt={2} fontStyle={'#767676'}>April 2022</Heading>
-                      </HStack></Box>
-                  <Heading size="xs">{dateNow}</Heading>
-                      <Pressable isPressed={() => navigation.openDrawer()}>
+                <Box py={5}>
+
+                    <IconButton icon={<Icon name="md-menu-sharp" size={30}/>}
+                                onPress={() => navigation.openDrawer()} paddingRight="80%" paddingTop="10%"/>
+                    <Box style={styles.HeadingText}>
+                        <Heading size="lg" ml={60} mt={2}  paddingLeft="12.5%">May 2022</Heading>
+                    </Box>
+                    <Heading size="xs" paddingLeft="9%" paddingTop="2%" color="#767676">{dateNow}</Heading>
+                    <Pressable isPressed={() => navigation.openDrawer()}>
 
 
-                      </Pressable>
-                  <FlatlistTest data={list}>
+                    </Pressable>
+                    <FlatlistTest data={list} >
 
-                  </FlatlistTest>
-
-
+                    </FlatlistTest>
 
 
-              </Box>
-          </Center>
-      </ScrollView>
+
+
+                </Box>
+            </Center>
+        </ScrollView>
     );
 }
 
