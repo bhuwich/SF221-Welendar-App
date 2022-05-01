@@ -27,7 +27,7 @@ const AddingPlan = ({navigation}) => {
 
 
     return(
-      <Box style={{flex:1,padding:20}}>
+      <Box style={{flex:1,padding:20}} backgroundColor="#FFFFFF">
           <Stack style = {styles.stack}>
               <Text style ={styles.header}>Adding Plan</Text>
               <EventTextFiled/>

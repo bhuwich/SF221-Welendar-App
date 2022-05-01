@@ -39,9 +39,8 @@ const MonthCalendar = ({navigation}) => {
                                     onPress={() => navigation.openDrawer()}/>
                     </HStack>
                     <Month/>
-                  <EventList/>
-
                 </Box>
+                    <EventList/>
             </ScrollView>
             <Fab renderInPortal={false} shadow={2} bottom={10}
                  placement="bottom-right"

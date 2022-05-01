@@ -26,11 +26,13 @@ const Example = () => {
         // await setToken(JSON.parse(res));
 
     }
-    return <Box>
-        <Heading fontSize="xl" p="4" pb="3">
+    return <Box height="290" width="390" backgroundColor="#FFFFFF" >
+        <Heading fontSize="xl" p="4" pb="3" pr="80%">
             Event
         </Heading>
-        <FlatList data={dataList} renderItem={({
+        <FlatList
+            showsVerticalScrollIndicator={false}
+            data={dataList} renderItem={({
                                                    item
                                                }) => <Box borderBottomWidth="1" _dark={{
             borderColor: "gray.600"
