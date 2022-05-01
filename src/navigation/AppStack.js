@@ -5,12 +5,10 @@ import { AsyncStorage } from "react-native";
 import CustomDrawer from "./CustomDrawer";
 import AppWelcome from "../screens/GetStarted";
 import YearCalendar from "../screens/YearCalendar";
-import WeekCalendar from "../screens/WeekCalendar";
 import MonthCalendar from "../screens/MonthCalendar";
 import Event from "../screens/Event";
 import AddingPlan from "../screens/AddingPlan";
 import EventDetail from "../screens/EventDetail";
-import EditEvent from "../screens/EditEvent";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 
 
@@ -20,7 +18,6 @@ const Stack = createStackNavigator();
 const RootDrawerNavigator = () => {
     return(
         <Drawer.Navigator useLegacyImplementation drawerContent={ (props) =><CustomDrawer{...props}/>}  screenOptions={{headerShown:false}}>
-            <Drawer.Screen name="Week" component={WeekCalendar}/>
             <Drawer.Screen name="Month" component={MonthCalendar}/>
             <Drawer.Screen name="Year" component={YearCalendar}/>
             <Drawer.Screen name="Activities" component={Event}/>
@@ -43,7 +40,7 @@ const EventStack  = () => {
     return (
         <Stack.Navigator  initialRouteName={false ? 'Main' :  'Welcome'} screenOptions={{ headerShown: false }}>
             <Stack.Screen name='CreateEvent' component={EventDetail} />
-            <Stack.Screen name='EditEvent' component={EditEvent} />
+
         </Stack.Navigator>
     );
 }

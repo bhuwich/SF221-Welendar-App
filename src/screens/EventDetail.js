@@ -7,13 +7,12 @@ import EventList from "../components/organism/EventList";
 
 
 const EventDetail = ({navigation}) => {
-    const [service, setService] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [note, setNote] = useState('');
     const [event, setEvent] = useState('');
     const [dataList, setDataList] = useState([]);
-    const [isFecth,setIsFecth] = useState(false);
+
 
 
 
@@ -81,23 +80,22 @@ const EventDetail = ({navigation}) => {
     return(
         <ScrollView>
         <Box flex={1} py={5} px={5}>
-            <Button ariant="subtle"  onPress={() => navigation.navigate('RootDrawer')} colorScheme={'warning'} mt={5} mb={5} variant="outline">
-                Back
-            </Button>
+
 
             <VStack>
+                <Heading> Event Detail</Heading>
                 <Text>
-                    {dataSave.dateSave} time: {dataSave.timeSave}
-                </Text>
-                <Text>
-                    {dataSave.eventSave}
-                </Text>
-                <Text>
-                    {dataSave.noteSave}
+                    date : {dataSave.dateSave} {'\n'}
+                    time : {dataSave.timeSave} {'\n'}
+                    event name : {dataSave.eventSave} {'\n'}
+                    note detail : {dataSave.noteSave} {'\n'}
                 </Text>
                 <Box>
                     <Button  onPress={() => onPush()} colorScheme={'warning'} mt={5} mb={5}>
                         Save
+                    </Button>
+                    <Button ariant="subtle"  onPress={() => navigation.navigate('RootDrawer')} colorScheme={'warning'} mt={5} mb={5} variant="outline">
+                        Back
                     </Button>
 
 

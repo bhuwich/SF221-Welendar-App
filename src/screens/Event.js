@@ -12,7 +12,7 @@ import {
     Skeleton,
     Text, Spacer,
 } from "native-base";
-import EventField from "../components/molecules/EventField";
+
 import FlatlistTest from '../screens/FlatlistTest';
 import {StyleSheet} from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -98,7 +98,7 @@ const EventScreen= ({navigation})=> {
                 <Box py={5}>
 
                     <IconButton icon={<Icon name="md-menu-sharp" size={30}/>}
-                                onPress={() => navigation.openDrawer()} paddingRight="80%" paddingTop="10%"/>
+                                onPress={() => navigation.openDrawer()} paddingRight="80%" />
                     <Box style={styles.HeadingText}>
                         <Heading size="lg" ml={60} mt={2}  paddingLeft="12.5%">May 2022</Heading>
                     </Box>

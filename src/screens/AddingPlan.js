@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import {} from 'react-native'
+import React, { useState} from 'react'
 import {Text, Select, Stack, Box, Button} from 'native-base'
 import {
     EventTextFiled,
     NoteTextFiled
 } from '../components/atoms/TextField'
-import {
-    SaveButton,
-    CancelButton
-} from '../components/atoms/ButtonStandard'
+
 import DateTimebar from '../components/molecules/DateTimeBar';
 import styles from '../style/styleEvent'
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+
 
 const AddingPlan = ({navigation}) => {
     const [service, setService] = useState('');
-    const [date, setDate] = useState('');
-    const [time, setTime] = useState('');
-    const [note, setNote] = useState('');
-    const [event, setEvent] = useState('');
+
 
 
 
@@ -44,7 +36,7 @@ const AddingPlan = ({navigation}) => {
 
               <NoteTextFiled/>
               <Box>
-                  {/* <Button  onPress={(pewPew) => navigation.navigate('EventStack')} colorScheme={'warning'} mt={5} mb={5}> */}
+
                   <Button  onPress={()=> navigation.navigate('EventStack')} colorScheme={'warning'} mt={5} mb={5}>
                       Save
                   </Button>

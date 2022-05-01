@@ -2,7 +2,7 @@ import React , { useState, useEffect} from 'react'
 import { Text, Input, Box, TextArea} from 'native-base'
 import styles from "../style/styleTextField"
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+
 
 const EventTextFiled = () => {
   const [value, setValue] = useState("");

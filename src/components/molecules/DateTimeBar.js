@@ -7,7 +7,7 @@ import styles from "../style/styDateTimebar";
 import style from "../style/styleTextField"
 import moment from "moment";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+
 
 const DateTimebar = () => {
     const [date, setDate] = useState(new Date());
@@ -49,7 +49,7 @@ const DateTimebar = () => {
       <Box>
           <Text style = {style.header}>Date</Text>
           <FormControl isDisabled>
-              <Box style = {style.Box}>
+              <Box style = {style.Box} flexDirection="row">
                   <Input defaultValue={textDate} height = {10} width = {"85%"} />
                   <Button style = {styles.button} onPress={() => showMode("date")}>
                       <EvilIcons name = "calendar" size={20} color={"#FFFFFF"} />

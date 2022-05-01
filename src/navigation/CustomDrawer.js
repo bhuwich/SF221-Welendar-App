@@ -55,22 +55,9 @@ const CustomDrawer = (props) => {
                     </VStack>
                 </VStack>
             </VStack>
+
             <Box alignItems="center" mt="5">
-                <Button variant="ghost">
-                    <HStack space="10">
-                <Image source={{
-                    uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Flag_of_the_United_States_%28Pantone%29.svg/800px-Flag_of_the_United_States_%28Pantone%29.svg.png"
-                }} alt="Alternate Text" size="2xs" borderRadius="50"/>
-                        <Text>English</Text>
-                        <Icon1 name="down" size={20}/>
-                    </HStack>
-                </Button>
-            </Box>
-            <Box alignItems="center" mt="5">
-                <HStack>
-                <Text>Light</Text>
-                    <Switch size="md" onTrackColor="#46455A" onThumbColor="white"/>
-                </HStack>
+
             </Box>
         </DrawerContentScrollView>
     );

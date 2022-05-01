@@ -25,11 +25,9 @@ const Example = (props) => {
   return <Box height="700" width="300" backgroundColor="#FFFFFF" paddingTop="5%" >
     <FlatList
         showsVerticalScrollIndicator={false}
-        data={dataList} renderItem={({
-                                       item
-                                     }) => <Box borderBottomWidth="1" _dark={{
-      borderColor: "gray.600"
-    }} borderColor="coolGray.200" pl="4" pr="5" py="2">
+        data={dataList} renderItem={({item
+        }) => <Box borderBottomWidth="1" height='300'
+                   borderColor="#FFF9EF" pl="4" pr="5" py="2">
       <HStack space={3} justifyContent="space-between">
 
 
