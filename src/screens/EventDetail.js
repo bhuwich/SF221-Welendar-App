@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Text, Box, VStack, IconButton, Heading, ScrollView, Button} from 'native-base'
 import {StyleSheet} from "react-native";
 import AsyncStorage, { useAsyncStorage } from "@react-native-async-storage/async-storage";
+import EventList from "../components/organism/EventList";
 
 
 

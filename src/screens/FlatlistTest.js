@@ -26,7 +26,8 @@ const Example = (props) => {
     <Heading fontSize="xl" p="4" pb="3">
       Event
     </Heading>
-    <FlatList data={dataList} renderItem={({
+    <FlatList showsVerticalScrollIndicator={false}
+              data={dataList} renderItem={({
                                          item
                                        }) => <Box borderBottomWidth="1" _dark={{
       borderColor: "gray.600"
