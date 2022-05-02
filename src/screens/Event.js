@@ -97,8 +97,8 @@ const EventScreen= ({navigation})=> {
 
                 <Box py={5}>
 
-                    <IconButton icon={<Icon name="md-menu-sharp" size={30}/>}
-                                onPress={() => navigation.openDrawer()} paddingRight="80%" />
+                    <IconButton variant={"unstyled"} width={"20%"} icon={< Icon name="md-menu-sharp" size={30} />}
+                                onPress={() => navigation.openDrawer()} />
                     <Box style={styles.HeadingText}>
                         <Heading size="lg" ml={60} mt={2}  paddingLeft="12.5%">May 2022</Heading>
                     </Box>

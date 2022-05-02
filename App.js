@@ -3,10 +3,12 @@ import { StyleSheet } from "react-native";
 import { Box, Image,NativeBaseProvider } from 'native-base';
 import {NavigationContainer} from "@react-navigation/native";
 import AppStack from "./src/navigation/AppStack";
-import {LogBox } from 'react-native';
+import { LogBox } from 'react-native';
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 LogBox.ignoreLogs(['Reanimated 2']);
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 const ImageLogo = './src/assets/Images/mainlogo.png';
 
