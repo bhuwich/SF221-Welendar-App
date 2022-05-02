@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Text, Box, VStack, IconButton, Heading, ScrollView, Button} from 'native-base'
+import { Text, Box, VStack, IconButton, Heading, ScrollView, Button, Center, Divider, Image} from 'native-base'
 import {StyleSheet} from "react-native";
 import AsyncStorage, { useAsyncStorage } from "@react-native-async-storage/async-storage";
 import EventList from "../components/organism/EventList";
+
 
 
 
@@ -79,29 +80,42 @@ const EventDetail = ({navigation}) => {
     } ,[])
     return(
         <ScrollView>
-        <Box flex={1} py={5} px={5}>
+            <Box flex={1} py={5} px={5}>
 
 
-            <VStack>
-                <Heading> Event Detail</Heading>
-                <Text>
-                    date : {dataSave.dateSave} {'\n'}
-                    time : {dataSave.timeSave} {'\n'}
-                    event name : {dataSave.eventSave} {'\n'}
-                    note detail : {dataSave.noteSave} {'\n'}
-                </Text>
-                <Box>
-                    <Button  onPress={() => onPush()} colorScheme={'warning'} mt={5} mb={5}>
-                        Save
-                    </Button>
-                    <Button ariant="subtle"  onPress={() => navigation.navigate('RootDrawer')} colorScheme={'warning'} mt={5} mb={5} variant="outline">
-                        Back
-                    </Button>
-
-
-                </Box>
-            </VStack>
-        </Box>
+                <VStack space="5">
+                    <Center mt="7">
+                        <Heading> Event Detail</Heading>
+                    </Center>
+                    <Box mt="7" alignItems="center" shadow={2}>
+                        <Divider my={3} mx={2} backgroundColor="#000000"/>
+                        <Image size={100} resizeMode={"contain"}  margin="5" source={{
+                            uri: "https://cdn4.iconfinder.com/data/icons/scrum-process-1/64/time-estimate-evaluation-task-performance-512.png"
+                        }} alt="Alternate Text" />
+                        <Box flexDirection={"row"} justifyContent="space-between">
+                            <Box marginRight="55%">
+                                <Text>{dataSave.dateSave}</Text>
+                            </Box>
+                            <Text>{dataSave.timeSave}</Text>
+                        </Box>
+                    </Box>
+                    <Box mr="6" ml="6">
+                        <Text bold fontSize="24">{dataSave.eventSave}</Text>
+                    </Box>
+                    <Box mr="7" ml="6" >
+                        <Text fontSize="18">{dataSave.noteSave}</Text>
+                    </Box>
+                    <Divider my={3} backgroundColor="#000000"/>
+                    <Box>
+                        <Button  onPress={() => onPush()} colorScheme={'warning'}>
+                            Save
+                        </Button>
+                        <Button ariant="subtle"  onPress={() => navigation.navigate('RootDrawer')} colorScheme={'warning'} mt={5} mb={5} variant="outline">
+                            Back
+                        </Button>
+                    </Box>
+                </VStack>
+            </Box>
         </ScrollView>
     );
 }
@@ -113,7 +127,7 @@ const styles = StyleSheet.create({
     },
     HeadingText:{
         justifyContent:"center",
-        alignItems:"stretch",
+        alignItems:"center",
         marginTop:10,
         marginBottom:20,
     }
