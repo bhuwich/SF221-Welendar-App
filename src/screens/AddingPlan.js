@@ -28,9 +28,8 @@ const AddingPlan = ({navigation}) => {
               <Box style = {styles.selector}>
                   <Select selectedValue={service}
                           onValueChange={itemValue => setService(itemValue)}>
-                      <Select.Item label='Option1' value = "a"/>
-                      <Select.Item label='Option2' value = "b"/>
-                      <Select.Item label='Option3' value = "c"/>
+                      <Select.Item label='Online' value = "online"/>
+                      <Select.Item label='Offline' value = "offline"/>
                   </Select>
               </Box>
 
